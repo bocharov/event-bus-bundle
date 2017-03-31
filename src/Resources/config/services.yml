@@ -1,0 +1,14 @@
+services:
+    event_dispatcher:
+        class: Bocharov\EventBusBundle\EventDispatcher\AsyncEventDispatcher
+        arguments:
+            - '@service_container'
+            - '@event_bus.producer'
+            - '%event_bus.async_mode_enabled%'
+    event_bus.producer:
+        class: OldSound\RabbitMqBundle\RabbitMq\Producer
+        arguments:
+            - '@old_sound_rabbit_mq.connection.default'
+        calls:
+            - [setExchangeOptions, [{name: "%event_bus.exchange.name%", type: direct}]]
+            - [disableAutoSetupFabric]

@@ -1,0 +1,28 @@
+{
+    "name": "bocharov/event-bus-bundle",
+    "type": "symfony-bundle",
+    "description": "This bundle provides Event Bus functionality via EventDispatcher + RabbitMQ.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Bocharov",
+            "email": "bocharov.alexandr@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "symfony/symfony": ">=3.0",
+        "php-amqplib/rabbitmq-bundle": "^1.12"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bocharov\\EventBusBundle\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "dev"
+        }
+    },
+    "minimum-stability": "dev"
+}
